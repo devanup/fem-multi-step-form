@@ -12,6 +12,8 @@ import {
 import { Input } from '@/components/ui/input';
 import { PhoneInput } from '@/components/ui/phone-input';
 import { FormWrapper } from './components';
+import StepButtons from './components/StepButtons';
+import StepIndicator from './components/StepIndicator';
 
 const PersonalInfoForm = () => {
 	const form = useFormContext();
@@ -23,6 +25,7 @@ const PersonalInfoForm = () => {
 
 	return (
 		<>
+			<StepIndicator />
 			<FormWrapper
 				title='Personal Information'
 				description={
@@ -92,6 +95,7 @@ const PersonalInfoForm = () => {
 						/>
 					</form>
 				</Form>
+				<StepButtons />
 			</FormWrapper>
 		</>
 	);
