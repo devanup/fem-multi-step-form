@@ -11,16 +11,15 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { PhoneInput } from '@/components/ui/phone-input';
-import { FormWrapper } from './components';
-import StepButtons from './components/StepButtons';
-import StepIndicator from './components/StepIndicator';
+import { StepButtons, StepIndicator, FormWrapper } from './components';
 
-const PersonalInfoForm = () => {
+export const PersonalInfoForm = () => {
 	const form = useFormContext();
 	const { nextStep } = useWizard();
 
 	const onSubmit = () => {
 		nextStep();
+		console.log('nextStep', nextStep.length);
 	};
 
 	return (
@@ -35,7 +34,7 @@ const PersonalInfoForm = () => {
 				<Form {...form}>
 					<form
 						onSubmit={form.handleSubmit(onSubmit)}
-						className='flex flex-col mt-4 h-full space-y-4'
+						className='flex flex-col mt-4 h-full space-y-6'
 					>
 						{/* Name Field */}
 						<FormField
@@ -45,7 +44,12 @@ const PersonalInfoForm = () => {
 								{ field }, // Render the form field using the `FormField` component. Pass the field props to the `Input` component.
 							) => (
 								<FormItem>
-									<FormLabel className='text-accent'>Name</FormLabel>
+									<div className='flex justify-between items-center'>
+										<FormLabel className='text-accent font-normal'>
+											Name
+										</FormLabel>
+										<FormMessage />
+									</div>
 									<FormControl>
 										<Input
 											className='text-secondary-foreground bg-primary'
@@ -53,25 +57,29 @@ const PersonalInfoForm = () => {
 											{...field}
 										/>
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
-						{/* Email field */}
+
 						<FormField
 							control={form.control}
 							name='email'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel className='text-accent'>Email</FormLabel>
+									<div className='flex justify-between items-center'>
+										<FormLabel className='text-accent font-normal'>
+											Email Address
+										</FormLabel>
+										<FormMessage />
+									</div>
 									<FormControl>
 										<Input
+											type='email'
 											className='text-secondary-foreground bg-primary'
 											placeholder='e.g. stephenking@lorem.com'
 											{...field}
 										/>
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -81,7 +89,12 @@ const PersonalInfoForm = () => {
 							name='phone'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel className='text-accent'>Phone Number</FormLabel>
+									<div className='flex justify-between items-center'>
+										<FormLabel className='text-accent font-normal'>
+											Phone Number
+										</FormLabel>
+										<FormMessage />
+									</div>
 									<FormControl>
 										<PhoneInput
 											placeholder='e.g. +1 234 567 890'
@@ -89,16 +102,13 @@ const PersonalInfoForm = () => {
 											{...field}
 										/>
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
+						<StepButtons />
 					</form>
 				</Form>
-				<StepButtons />
 			</FormWrapper>
 		</>
 	);
 };
-
-export default PersonalInfoForm;

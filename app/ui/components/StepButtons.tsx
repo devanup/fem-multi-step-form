@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { useFormContext } from 'react-hook-form';
 import { useWizard } from 'react-use-wizard';
 
-const StepButtons = () => {
+export const StepButtons = () => {
 	const { nextStep, previousStep, isFirstStep, activeStep } = useWizard();
 	const form = useFormContext();
 
@@ -43,5 +43,3 @@ const StepButtons = () => {
 		</>
 	);
 };
-
-export default StepButtons;

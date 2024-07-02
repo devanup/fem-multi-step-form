@@ -2,7 +2,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import { useWizard } from 'react-use-wizard';
 
-const StepIndicator = () => {
+export const StepIndicator = () => {
 	const { activeStep } = useWizard();
 
 	return (
@@ -17,21 +17,27 @@ const StepIndicator = () => {
 				<div
 					className={clsx(
 						'w-10 h-10 p-4 my-auto border border-background z-10 rounded-full flex justify-center items-center',
-						{ 'bg-background text-foreground': activeStep + 1 === 1 },
+						{
+							'bg-[#BEE2FD] border-[#BEE2FD] font-bold text-primary-foreground':
+								activeStep + 1 === 1,
+						},
 					)}
 				>
 					1
 				</div>
 				<div className='z-20 hidden md:block flex-col uppercase'>
-					<p className='text-muted'>Step 1</p>
+					<p className='text-muted font-normal'>Step 1</p>
 					<p className='text-primary font-bold'>Your Info</p>
 				</div>
 			</div>
 			<div className='flex gap-3'>
 				<div
 					className={clsx(
-						'w-10 h-10 p-4 my-auto border border-background z-10 rounded-full flex justify-center items-center',
-						{ 'bg-background text-foreground': activeStep + 1 === 2 },
+						'w-10 h-10 p-4 my-auto border border-background z-10 rounded-full flex justify-center items-center font-bold',
+						{
+							'bg-[#BEE2FD] border-[#BEE2FD] font-bold text-primary-foreground':
+								activeStep + 1 === 2,
+						},
 					)}
 				>
 					2
@@ -44,8 +50,11 @@ const StepIndicator = () => {
 			<div className='flex gap-3'>
 				<div
 					className={clsx(
-						'w-10 h-10 p-4 my-auto border border-background z-10 rounded-full flex justify-center items-center',
-						{ 'bg-background text-foreground': activeStep + 1 === 3 },
+						'w-10 h-10 p-4 my-auto border border-background z-10 rounded-full flex justify-center items-center font-bold',
+						{
+							'bg-[#BEE2FD] border-[#BEE2FD] font-bold text-primary-foreground':
+								activeStep + 1 === 3,
+						},
 					)}
 				>
 					3
@@ -56,7 +65,15 @@ const StepIndicator = () => {
 				</div>
 			</div>
 			<div className='flex gap-3'>
-				<div className='w-10 h-10 p-4 my-auto border border-background z-10 rounded-full flex justify-center items-center'>
+				<div
+					className={clsx(
+						'w-10 h-10 p-4 my-auto border border-background z-10 rounded-full flex justify-center items-center font-bold',
+						{
+							'bg-[#BEE2FD] border-[#BEE2FD] font-bold text-primary-foreground':
+								activeStep + 1 === 4,
+						},
+					)}
+				>
 					4
 				</div>
 				<div className='z-20 hidden md:block flex-cols uppercase'>
@@ -67,5 +84,3 @@ const StepIndicator = () => {
 		</div>
 	);
 };
-
-export default StepIndicator;
