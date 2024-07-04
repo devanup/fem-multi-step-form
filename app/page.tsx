@@ -7,6 +7,8 @@ import { Wizard } from 'react-use-wizard'; // Wizard to create multi-step form
 import { isValidPhoneNumber } from 'react-phone-number-input'; // isValidPhoneNumber to validate phone number
 import { PersonalInfoForm, SelectPlanForm } from './ui';
 import { PickAddons } from './ui/PickAddons';
+import { FinishingUp } from './ui/FinishingUp';
+import { ThankYou } from './ui/ThankYou';
 
 // Define the form schema
 const formSchema = z.object({
@@ -55,6 +57,8 @@ export default function Home() {
 						<PersonalInfoForm />
 						<SelectPlanForm />
 						<PickAddons />
+						<FinishingUp />
+						<ThankYou />
 					</Wizard>
 				</FormProvider>
 			</div>
