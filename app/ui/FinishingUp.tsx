@@ -43,7 +43,7 @@ export const FinishingUp = () => {
 						<>
 							<Separator className='bg-foreground/15 my-4' />
 							{addonsArray.map((addonInfo, index) => (
-								<div className='flex w-full my-2'>
+								<div className='flex w-full my-2' key={index}>
 									<p className='flex basis-4/5 text-muted-foreground'>
 										{addonInfo.title}
 									</p>
