@@ -15,7 +15,7 @@ export const FormWrapper = ({
 				</h1>
 			)}
 			{description && (
-				<p className='my-4 text-secondary-foreground/45'>{description}</p>
+				<p className='text-secondary-foreground/45'>{description}</p>
 			)}
 			{children}
 		</div>

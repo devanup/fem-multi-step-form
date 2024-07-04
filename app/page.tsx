@@ -48,7 +48,7 @@ export default function Home() {
 	});
 	return (
 		<>
-			<div className='bg-primary m-4 p-4 text-primary-foreground rounded mb-20 md:flex'>
+			<div className='bg-primary m-4 p-4 text-primary-foreground rounded mb-20 md:flex shadow-md'>
 				<FormProvider {...form}>
 					<Wizard>
 						<PersonalInfoForm />

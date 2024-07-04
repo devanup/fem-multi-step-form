@@ -28,15 +28,19 @@ export const StepButtons = () => {
 					variant={'link'}
 					className='text-muted-foreground'
 				>
-					Back
+					Go Back
 				</Button>
 				{activeStep === 3 ? (
 					<Button onClick={() => nextStep()} variant={'secondary'}>
 						Confirm
 					</Button>
 				) : (
-					<Button type='submit' variant={'secondary'}>
-						Next
+					<Button
+						type='submit'
+						variant={'secondary'}
+						className='bg-primary-foreground text-primary hover:bg-[#164A8A]'
+					>
+						Next Step
 					</Button>
 				)}
 			</div>

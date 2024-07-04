@@ -26,7 +26,7 @@ export const PersonalInfoForm = () => {
 		<>
 			<StepIndicator />
 			<FormWrapper
-				title='Personal Information'
+				title='Personal info'
 				description={
 					'Please provide your name, email address, and phone number.'
 				}
