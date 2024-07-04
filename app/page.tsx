@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'; // zodResolver to use the
 import { Wizard } from 'react-use-wizard'; // Wizard to create multi-step form
 import { isValidPhoneNumber } from 'react-phone-number-input'; // isValidPhoneNumber to validate phone number
 import { PersonalInfoForm, SelectPlanForm } from './ui';
+import { PickAddons } from './ui/PickAddons';
 
 // Define the form schema
 const formSchema = z.object({
@@ -53,6 +54,7 @@ export default function Home() {
 					<Wizard>
 						<PersonalInfoForm />
 						<SelectPlanForm />
+						<PickAddons />
 					</Wizard>
 				</FormProvider>
 			</div>
